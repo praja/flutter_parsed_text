@@ -7,6 +7,9 @@ class ParsedText extends StatelessWidget {
   /// It takes a [TextStyle] object as it's property to style all the non links text objects.
   final TextStyle? style;
 
+
+  final TextOverflowWidget? overflowWidget;
+
   /// Takes a list of [MatchText] object.
   ///
   /// This list is used to find patterns in the String and assign onTap [Function] when its
@@ -89,6 +92,7 @@ class ParsedText extends StatelessWidget {
     this.maxLines,
     this.onTap,
     this.selectable = false,
+    this.overflowWidget,
     this.regexOptions = const RegexOptions(),
   }) : super(key: key);
 
@@ -203,7 +207,9 @@ class ParsedText extends StatelessWidget {
       );
     }
 
-    return RichText(
+    return  ExtendedText.rich(
+      TextSpan(
+      children: <InlineSpan>[...widgets], style: style),
       softWrap: softWrap,
       overflow: overflow,
       textScaleFactor: textScaleFactor,
@@ -212,11 +218,12 @@ class ParsedText extends StatelessWidget {
       textWidthBasis: textWidthBasis,
       textAlign: alignment,
       textDirection: textDirection,
-      text: TextSpan(
-        text: '',
-        children: <InlineSpan>[...widgets],
-        style: style,
-      ),
+      overflowWidget: overflowWidget,
+      // text: TextSpan(
+      //   text: '',
+      //   children: <InlineSpan>[...widgets],
+      //   style: style,
+      // ),
     );
   }
 }

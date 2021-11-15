@@ -1,5 +1,6 @@
 library flutter_parsed_text;
 
+import 'package:extended_text/extended_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
