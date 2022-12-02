@@ -85,8 +85,7 @@ class _MainAppState extends State<MainApp> {
                 ),
                 MatchText(
                     type: ParsedType.CUSTOM,
-                    pattern:
-                        "(---( )?(`)?spoiler(`)?( )?---)\n\n(.*?)\n( )?(---( )?(`)?spoiler(`)?( )?---)",
+                    pattern: "(---( )?(`)?spoiler(`)?( )?---)\n\n(.*?)\n( )?(---( )?(`)?spoiler(`)?( )?---)",
                     style: TextStyle(
                       color: Colors.purple,
                       fontSize: 50,
@@ -126,8 +125,8 @@ class _MainAppState extends State<MainApp> {
                           content: new Text("${match.group(1)!} clicked."),
                           actions: <Widget>[
                             // usually buttons at the bottom of the dialog
-                            new FlatButton(
-                              child: new Text("Close"),
+                            new OutlinedButton(
+                              Widget: Text("Close"),
                               onPressed: () {},
                             ),
                           ],
@@ -155,8 +154,8 @@ class _MainAppState extends State<MainApp> {
                           content: new Text("$url clicked."),
                           actions: <Widget>[
                             // usually buttons at the bottom of the dialog
-                            new FlatButton(
-                              child: new Text("Close"),
+                            new OutlinedButton(
+                              Widget: Text("Close"),
                               onPressed: () {},
                             ),
                           ],
